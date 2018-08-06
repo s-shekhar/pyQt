@@ -39,7 +39,6 @@ class Ui_MainWindow(object):
         self.tabbed.setElideMode(QtCore.Qt.ElideMiddle)
         self.tabbed.setTabsClosable(False)
         self.tabbed.setObjectName(_fromUtf8("tabbed"))
-        #self.tabbed.setStyleSheet("QTabWidget::tab::disabled{width: 0; height: 0; margin: 0; padding: 0; border: none;}")
         self.tab_2 = QtGui.QWidget()
         self.tab_2.setObjectName(_fromUtf8("tab_2"))
         self.label_2 = QtGui.QLabel(self.tab_2)
@@ -48,6 +47,11 @@ class Ui_MainWindow(object):
         self.tabbed.addTab(self.tab_2, _fromUtf8(""))
         self.tab = QtGui.QWidget()
         self.tab.setObjectName(_fromUtf8("tab"))
+
+
+        #remove tab bar
+        self.tabbed.setStyleSheet("QTabWidget::tab-bar {border-color: #FF0000; width: 10; height: 0; margin: 0; padding: 0; border: none;} ")
+
         self.label = QtGui.QLabel(self.tab)
         self.label.setGeometry(QtCore.QRect(210, 190, 65, 20))
         self.label.setObjectName(_fromUtf8("label"))
@@ -64,7 +68,6 @@ class Ui_MainWindow(object):
         self.statusbar = QtGui.QStatusBar(MainWindow)
         self.statusbar.setObjectName(_fromUtf8("statusbar"))
         MainWindow.setStatusBar(self.statusbar)
-
         #code for calling function for switching tab based on index value
         self.pushButton.clicked.connect(self.handleButton,0)
         self.pushButton_2.clicked.connect(self.handleButton_2,1)
@@ -76,7 +79,6 @@ class Ui_MainWindow(object):
 
     def handleButton(self):
         self.tabbed.setCurrentIndex(0)
-
 
     def handleButton_2(self):
         self.tabbed.setCurrentIndex(1)
