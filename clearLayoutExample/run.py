@@ -58,12 +58,9 @@ class Ui_MainWindow(object):
 	#--------------
 
 
-
 	self.verticalLayout.addLayout(self.formLayout_1)
 
-
-
-
+	
         self.pushButton = QtGui.QPushButton(self.verticalLayoutWidget)
         self.pushButton.setObjectName(_fromUtf8("pushButton"))
         self.verticalLayout.addWidget(self.pushButton)
